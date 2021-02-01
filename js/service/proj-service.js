@@ -3,33 +3,62 @@
 // create a database for projects
 var gProjList = [{
     id: 1,
-    name: 'nam1e',
-    title: 'title1',
-    desc: 'desc1',
-    url: 'url1',
-    imgUrl: '',
-    publishedAt: 'date1',
-    labels: 'headaches, big headaches'
+    name: 'Minesweeper',
+    title: 'Minesweeper Game',
+    shortDesc: 'Interactive game with three difficulty levels',
+    desc: `A minesweeper game, based off of the familiar classic. This game features three difficulty levels, a lives system, a hint system and a safe-click system,
+    giving you the opportunity to ascend your experience to new heights!  Oh, and in case you weren't already impressed- <b>it was built in two days.</b>`,
+    publishedAt: '20-01-2021',
+    labels: 'HTML, CSS, Javascript'
 }, {
     id: 2,
-    name: 'nam2',
-    title: 'title2',
-    desc: 'desc2',
-    url: 'url2',
-    imgUrl: '',
+    name: 'Bookstore Interface',
+    shortDesc: 'Perfect for keeping stock of a large variety of books',
+    title: 'Bookstore Interface',
+    desc: `'desc2'`,
     publishedAt: 'date2',
     labels: null
 }, {
     id: 3,
-    name: 'bookstore-proj',
+    name: 'Touch The Numbers',
+    shortDesc: 'Challenging game against the clock- save and compare your best times',
     title: 'Bookstore Interface',
-    desc: 'desc3',
-    url: 'url3',
-    imgUrl: '',
+    desc: `'desc3'`,
     publishedAt: 'date3',
     labels: null
 }]
-// create a function to render modal to be called onclick.
+renderPortfolio()
+function renderPortfolio() {
+    var elPortfolioBody = $(`.portfolio-body`)
+var strHTML = ''
+    for (var i = 1 ; i < gProjList.length+1 ; i++) { 
+        var proj = getProjByID(i-1)
+        strHTML += `    
+        <div class="col-md-4 col-sm-6 portfolio-item">
+            <a class="portfolio-link" data-toggle="modal" href="#portfolioModal${proj.id}"  onclick="renderProjModal(id)" >
+            <div class="portfolio-hover">
+                <div class="portfolio-hover-content">
+                <i class="fa fa-plus fa-3x"></i>
+                </div>
+            </div>
+            <img class="img-fluid" src="img/portfolio/0${proj.id}-thumbnail.jpg" alt="">
+            </a>
+            <div class="portfolio-caption">
+            <h4>${proj.title}</h4>
+            <p class="text-muted">${proj.shortDesc}</p>
+            </div>
+            </div>
+        `
+    }
+    $(elPortfolioBody).html(strHTML)
+
+}
+
+
+
+
+
+
 
 function renderProjModal(id) {
     var projId = +(id)
@@ -38,14 +67,13 @@ function renderProjModal(id) {
     var strHtml = `
 <h2> ${proj.title}</h2>
 <p class='item-intro text-muted'>${proj.desc}</p>
-<button class='btn btn-primary btn-lg'  type='button' onclick="onOpenProj(${projId})">
+<button class='btn btn-primary btn-lg' style="margin:25px"  type='button' onclick="onOpenProj(${projId})">
 <i class='fas fa-external-link-alt'></i>
 Check it out!</button>
 <img class="img-fluid d-block mx-auto portfolio-img" src="img/portfolio/${projId+1}-full.jpg" alt="">
 
 <ul class='list-inline'>
-<li>Date: ${proj.publishedAt}</li>
-<li>Client: Window</li>
+<li>Date: Originally published: ${proj.publishedAt}</li>
 <li>Category: ${proj.labels}</li>
 </ul>
 
