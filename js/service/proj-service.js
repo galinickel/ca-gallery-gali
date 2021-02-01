@@ -7,6 +7,7 @@ var gProjList = [{
     title: 'title1',
     desc: 'desc1',
     url: 'url1',
+    imgUrl: '',
     publishedAt: 'date1',
     labels: 'headaches, big headaches'
 }, {
@@ -15,6 +16,7 @@ var gProjList = [{
     title: 'title2',
     desc: 'desc2',
     url: 'url2',
+    imgUrl: '',
     publishedAt: 'date2',
     labels: null
 }, {
@@ -23,6 +25,7 @@ var gProjList = [{
     title: 'Bookstore Interface',
     desc: 'desc3',
     url: 'url3',
+    imgUrl: '',
     publishedAt: 'date3',
     labels: null
 }]
@@ -38,7 +41,7 @@ function renderProjModal(id) {
 <button class='btn btn-primary btn-lg'  type='button' onclick="onOpenProj(${projId})">
 <i class='fas fa-external-link-alt'></i>
 Check it out!</button>
-<img class="img-fluid d-block mx-auto" src="img/portfolio/06-full.jpg" alt="">
+<img class="img-fluid d-block mx-auto portfolio-img" src="img/portfolio/${projId+1}-full.jpg" alt="">
 
 <ul class='list-inline'>
 <li>Date: ${proj.publishedAt}</li>
@@ -53,7 +56,21 @@ Close Project</button>`
     $(elModalBody).html(strHtml)
 }
 
+function onOpenProj(projId) {
+    switch (projId) {
+        case 0:
+            window.open('https://galinickel.github.io/sprint1/')
+            break;
 
+        case 1:
+            window.open('https://galinickel.github.io/bookstore_project/')
+            break;
+        case 2:
+            window.open('https://galinickel.github.io/touch-nums-ca/')
+            break;
+
+    }
+}
 
 function getProjByID(projId) {
     return gProjList[projId]
