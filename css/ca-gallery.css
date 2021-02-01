@@ -27,13 +27,19 @@ h6 {
 
 section {
     padding: 100px 0;
+    color: #DCD2CC;
+
 }
 section h2.section-heading {
     font-size: 40px;
     margin-top: 0;
     margin-bottom: 15px;
+    color: #93c5ba;
+
+    
 }
 section h3.section-subheading {
+
     font-size: 16px;
     font-weight: 400;
     font-style: italic;
@@ -773,4 +779,10 @@ fieldset[disabled] .btn-xl:hover {
 }
 .heading-txt { 
     font-family: 'Lily Script One', cursive;
+}
+
+
+.portfolio-img { 
+    height:500px;
+    border-radius: 10px;
 }
