@@ -189,7 +189,7 @@ body {
     #mainNav.navbar-shrink {
         padding-top: 0;
         padding-bottom: 0;
-        background-color: #222222;
+        background-color: #bbe0d5a4;
     }
     #mainNav.navbar-shrink .navbar-brand {
         font-size: 1.25em;
@@ -570,6 +570,7 @@ font-family: 'Cookie', cursive;
 }
 .team-member {
     text-align: center;
+    margin-left: 20%;
 }
 .team-member img {
     width: 225px;
@@ -595,8 +596,9 @@ font-family: 'Cookie', cursive;
     }
 }
 footer {
-    padding: 25px 0;
+    padding: 10px 0;
     text-align: center;
+    background-color:  #bbe0d5a4;
 }
 footer span.copyright {
     font-size: 90%;
@@ -786,3 +788,4 @@ fieldset[disabled] .btn-xl:hover {
     height:500px;
     border-radius: 10px;
 }
+

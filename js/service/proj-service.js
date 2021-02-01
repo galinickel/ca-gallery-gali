@@ -29,7 +29,6 @@ var gProjList = [{
     publishedAt: '18-01-2021',
     labels: 'HTML, CSS, Javascript'
 }]
-renderPortfolio()
 
 function renderPortfolio() {
     var elPortfolioBody = $(`.portfolio-body`)
@@ -68,35 +67,17 @@ function renderProjModal(id) {
 <i class='fas fa-external-link-alt'></i>
 Check it out!</button>
 <img class="img-fluid d-block mx-auto portfolio-img" src="img/portfolio/${projId}-full.jpg" alt="">
-
 <ul class='list-inline'>
 <li>Date: Originally published: ${proj.publishedAt}</li>
 <li>Category: ${proj.labels}</li>
 </ul>
-
-
 <button class='btn btn-primary' data-dismiss='modal' type='button'>
 <i class='fa fa-times'></i>
 Close Project</button>`
     $(elModalBody).html(strHtml)
 }
 
-function onOpenProj(projId) {
-    switch (projId) {
-        case 0:
-            window.open('https://galinickel.github.io/sprint1/')
-            break;
-
-        case 1:
-            window.open('https://galinickel.github.io/bookstore_project/')
-            break;
-        case 2:
-            window.open('https://galinickel.github.io/touch-nums-ca/')
-            break;
-
-    }
-}
-
 function getProjByID(projId) {
     return gProjList[projId]
 }
+
